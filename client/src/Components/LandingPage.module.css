@@ -1,0 +1,46 @@
+
+.lnd{
+    background-image: url('../images/img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title{
+    color: rgb(15, 0, 0);
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(255, 0, 13),
+        0 0 82px rgb(255, 0, 64),
+        0 0 92px rgb(255, 0, 43),
+        0 0 102px rgb(255, 0, 64),
+        0 0 151px rgb(255, 0, 34);
+        text-decoration: none;
+        align-items: center;
+ 
+ 
+}
+
+.btn {
+    cursor: pointer;
+    background: #d84040;
+   
+  
+    
+    border-radius: 20px;
+    font-style: italic;
+
+    color: #ffffff;
+    font-size: 15px;
+    padding: 9px 23px 9px 23px;
+    text-decoration: none;
+    position:relative;
+    margin-top: 5%;
+    
+  }
+  
+  .btn:hover {
+    text-decoration: none;
+  }
+ 

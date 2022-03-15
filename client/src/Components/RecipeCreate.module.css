@@ -1,0 +1,102 @@
+.bkg{
+    background-image: url('../images/salad-gc7f87fae6_1920.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    width: 80% ;
+
+    
+    
+}
+
+.container {
+    display: flex;
+    justify-content:center;
+   
+    flex-direction: column;
+
+    top: 20px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    
+    position:fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+
+
+    
+}
+
+.errors{
+    color: rgb(255, 0, 0);
+    background-color: rgb(246, 223, 223);
+    display: flex;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+   }
+   .form{
+       display: flex;
+       flex-direction: column;
+       background-color:rgb(212, 212, 158) ;
+       border-radius: 20px;
+       
+      
+       
+       padding: 90px;
+       box-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.55);    
+       
+   }
+
+   .btn {
+    
+    border-radius: 10px;
+    font-family: italic;
+    color: #000000;
+    font-size: 20px;
+    background: rgb(212, 212, 158);
+    padding: 10px 30px 10px 30px;
+    text-decoration: none;
+    padding-bottom: 15px;
+    
+  }
+  
+  .btn:hover {
+    background: #f2f2b1;
+    background-image: -webkit-linear-gradient(top, #f2f2b1, #f3ff99);
+    background-image: -moz-linear-gradient(top, #f2f2b1, #f3ff99);
+    background-image: -ms-linear-gradient(top, #f2f2b1, #f3ff99);
+    background-image: -o-linear-gradient(top, #f2f2b1, #f3ff99);
+    background-image: linear-gradient(to bottom, #f2f2b1, #f3ff99);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .h1{
+    background-color:rgb(231, 88, 88) ;
+    border-radius: 15px;
+    padding: 7px;
+    box-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.55);    
+    font-family: italic;
+  }
+
+
+
+
+ .input{
+    width:90%;
+    height: 25px ;
+    margin: auto;
+    border: 2px solid rgb(255, 255, 255);
+    outline: none;
+    
+    color: black;
+ }
+
+ .title{
+    color: rgb(155, 76, 76);
+    text-shadow: #000000;
+        text-decoration: none;
+        align-items: center;
+ }

@@ -1,0 +1,16 @@
+.cards{
+    display: grid;
+    grid-template-columns:repeat(auto-fill, 230px);
+    gap: 40px;
+    padding: 40px;
+    justify-content: center;
+
+
+
+}
+
+.paginado{
+    background-color: rgb(223, 150, 150);
+    border-radius: 5px;
+    color: aliceblue;
+}
