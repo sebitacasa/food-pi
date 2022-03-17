@@ -13,7 +13,7 @@ export default function Home() {
 
 
   const [title, setTitle] = useState("");
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState("")
   const [order, setOrder] = useState("");
   const [currentPage, setCurrentPage] = useState(1); // primero declaro un estado de la pagina en la posicion actual.
   const [recipesPerPage, setRecipesPerPage] = useState(9); // cantidad de recetas por pagina --- arranca en 9
@@ -40,7 +40,7 @@ export default function Home() {
   }
 
   function handleInputChange(e) {
-    e.preventDefault(e);
+    e.preventDefault();
     setTitle(e.target.value);
     setSearch("");
   }
@@ -70,9 +70,9 @@ export default function Home() {
         
     <div className={styles.bkg}>
     <div className={styles.search}>
-     <form onSubmit={(e) => {handleSubmit(e)}}> {/* este es para hacer enter y que funcione */}
+     <form onSubmit={(e) => {handleSubmit(e)}}> 
      
-     <input type='text' placeholder='search...' value={search} onChange={(e) => {handleInputChange(e)}} className={styles.input}></input>
+     <input type='text' placeholder='Search...'  onChange={(e) => {handleInputChange(e)}} className={styles.input}></input>
      <button  type='submit' className={styles.btnsearch}>search</button>
      </form>
 

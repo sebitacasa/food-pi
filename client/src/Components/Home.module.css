@@ -3,14 +3,12 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment:fixed;
+  
 }
 
-.bkg{
-  
-  
-  
-}
+
 .select{
+
 background: rgb(224, 157, 157);
 cursor: pointer;
 display:inline-block;
@@ -19,6 +17,10 @@ text-align: center;
 padding: 5px;
 color: white;
 box-shadow: #000000;
+font-size: 25px;
+font-weight: bolder;
+font-family: italic;
+
 
 
 }
@@ -53,10 +55,13 @@ font-size: 14px;
 background: rgb(224, 157, 157);
 padding:  3px 13px 3px 13px ;
 text-decoration: none;
+font-size: 25px;
+font-weight: bolder;
 
 }
 .input{
 background-color: #fbfbfb;
+font-size: 25px;
 }
 .create{
 
@@ -66,6 +71,9 @@ font-size: 14px;
 background: rgb(224, 157, 157);
 padding:  5px 13px 5px 13px ;
 text-decoration: none;
+font-size: 25px;
+font-weight: bolder;
+
 }
 .search{
 display: flex;
@@ -74,7 +82,15 @@ margin-left: 50px;
 margin-bottom: 25px;
 margin-top: 10px;
 
+
+
 }
+
+.value{
+cursor: pointer;
+}
+
+
 .btnsearch {
 
 font-family: italic;
@@ -83,6 +99,8 @@ font-size: 13px;
 background: rgb(224, 157, 157) ;
 padding:  3px 13px 3px 13px ;
 text-decoration: none;
+font-size: 23px;
+font-weight: bolder;
 
 }
 
@@ -95,6 +113,7 @@ cursor: pointer;
 background: #fa0606;
 text-decoration: none;
 cursor: pointer;
+color: #000000;
 }
 .refresh:hover {
 background: #e40000;

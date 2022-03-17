@@ -1,0 +1,7 @@
+.search{
+    display: flex;
+    justify-content: start;
+    margin-left: 50px;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}

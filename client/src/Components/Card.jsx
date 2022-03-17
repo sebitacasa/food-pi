@@ -16,9 +16,8 @@ export default function Card({ title, image, diets, healthScore, id}) {
           <img
             className={styles.cardimg}
             src={image}
-            alt="img not found"
-            width="300px"
-            height="350px"
+            alt="image not found"
+            
           />
         </div>
         <div className={styles.tipes}>

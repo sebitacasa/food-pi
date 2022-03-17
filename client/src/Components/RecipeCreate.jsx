@@ -81,11 +81,11 @@ export default function RecipeCreate() {
         setInput({
           title: "",
           dishTypes: "",
-          summary: "",
           image: "",
           healthScore: "",
           analyzedInstructions: "",
           diets: [],
+          summary: "",
         });
       }else{
         alert('Error')
@@ -113,16 +113,7 @@ export default function RecipeCreate() {
         />
         {errors.title && <p className={styles.errors}>{errors.title}</p>}
 
-        <label className={styles.label}>Summary:</label>
-        <input
-          className={styles.input}
-          type="text"
-          name="summary"
-          value={input.summary}
-          onChange={(e) => handleInputChange(e)}
-        />
-        {errors.summary && <p className={styles.errors}>{errors.summary}</p>}
-
+       
         <label className={styles.label}>Dish Type:</label>
         <input
           className={styles.input}
@@ -170,7 +161,18 @@ export default function RecipeCreate() {
           onChange={(e) => handleInputChange(e)}
         />
 
-        <select className={styles.input} onChange={(e) => handleSelect(e)}>
+        <label className={styles.label}>Summary:</label>
+        <input
+          className={styles.summary}
+          type="text"
+          name="summary"
+          value={input.summary}
+          onChange={(e) => handleInputChange(e)}
+        />
+        {errors.summary && <p className={styles.errors}>{errors.summary}</p>}
+
+
+        <select className={styles.dietss} onChange={(e) => handleSelect(e)}>
           {diets.map((dl ) => (
               
                   <option key={dl} value={dl.name}>{dl.name}</option>
@@ -180,13 +182,13 @@ export default function RecipeCreate() {
         </select>
 
         
-      <h1 className={styles.title}>Create Recepe</h1>
+      {/* <h1 className={styles.title}>Create Recepe</h1> */}
 
         <button className={styles.title} type="submit">Create Recipe</button>
       {input.diets.map((d) => (
-        <div >
-          <p>{d}</p>
-          {/* <button  onClick={() => handleDelete(d)}>x</button> */}
+        <div className={styles.div} >
+          <p className={styles.p}>{d}</p>
+           <button className={styles.btn} onClick={() => handleDelete(d)}>x</button> 
         </div>
       ))}
       </form>
