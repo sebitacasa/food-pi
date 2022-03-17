@@ -1,12 +1,12 @@
 const axios = require('axios')
-const  API_KEY  =  "b0d23f5958fe43cda196a32962b8ff44"
+const  API_KEY  =  "157ea0dd61b64091b319eba5584ceff8"
 //const {API_KEY} = process.env;
 
 
 
 
 const apiCall = async () => {
-  let recipe = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=10`);
+  let recipe = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=15`);
      
       let recipeInformation = recipe.data.results?.map((r) => {
         return {
@@ -23,10 +23,26 @@ const apiCall = async () => {
       return recipeInformation
 }
 
+// const apiCall = () => {
+//   axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=10`)
+//   .then(repuesta => {
+//     return repuesta.data
+//   })
+//   .catch(error=>{
+//     console.log(error)
+//   })
+// }
+
+
+
+
+
 
 module.exports = {
   apiCall
 }
+
+
 
 
 // no funciona con bulkCreate.

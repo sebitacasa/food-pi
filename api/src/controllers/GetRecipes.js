@@ -3,9 +3,10 @@ const { Recipe, Diet } = require("../db");
 const { Sequelize } = require("sequelize");
 
 
+
 const getAllRecipos = async (req, res) => {
   try {
-    let recipesApi = await apiCall();
+    let recipesApi =  await apiCall();
     let recipeDb = await Recipe.findAll({
       include: {
         model: Diet,

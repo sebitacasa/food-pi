@@ -15,14 +15,30 @@ let diets = [
 ];
 
 const getDiets = async (req,res) => {
-    //console.log(diets);
+    console.log(diets);
         diets.forEach(e => {
             Diet.findOrCreate({
                 where: {name:e.name}
             })
         })
 
-         const allTheTypes = await Diet.findAll();
+        // Diet.bulkCreate([
+        //     { name: "gluten free" },
+        //     { name: "ketogenic" },
+        //     { name: "vegetarian" },
+        //     { name: "lacto-vegetarian" },
+        //     { name: "lacto ovo vegetarian" },
+        //     { name: "vegan" },
+        //     { name: "pescatarian" },
+        //     { name: "paleolithic" },
+        //     { name: "primal" },
+        //     { name: "whole 30" },
+        //     { name: "dairy free"}
+        //   ]).then(() => console.log("200"))
+
+
+
+        const allTheTypes = await Diet.findAll();
         res.send(allTheTypes)
 }
 

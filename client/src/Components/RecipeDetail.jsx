@@ -1,5 +1,5 @@
 import React from "react";
-import { getById } from "../Redux/Actions";
+import { getById, cleanDetail} from "../Redux/Actions";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -11,8 +11,19 @@ export default function Detail (){
     const  {id} = useParams()
 
     const dispatch = useDispatch()
+    // useEffect(()=>{
+        
+    //     dispatch( getById(id) ) }, [dispatch])
+
     useEffect(()=>{
-        dispatch( getById(id) ) }, [dispatch])
+        dispatch(getById(id))
+        return function () {
+            dispatch(cleanDetail())
+        }
+    }, [dispatch])
+        
+
+    
 
 
     const recipeDetail = useSelector(state => state.details)

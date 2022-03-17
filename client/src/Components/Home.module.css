@@ -1,62 +1,103 @@
 body{
   background-image: url('../images/img.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment:fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
 }
 
-.filterC {
-   
-}
-.nav  {
-  display: block;
-  margin-top: 50px;
-  margin-left: 20px; 
-}
-
-.refresh {
-  -webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
-  font-family: italic;
-  color: #000000;
-  font-size: 14px;
-  background: rgb(193, 215, 233);
-  padding: 3px 13px 3px 13px;
- 
-}
-
-.select {
-  background: rgb(186, 216, 156);
-  cursor: pointer;
-  display: inline-block;
-  justify-content: center;
-  text-align: center;
-  padding: 5px;
-  border-radius: 5px;
-  border-style: groove;
+.bkg{
+  
+  
   
 }
+.select{
+background: rgb(224, 157, 157);
+cursor: pointer;
+display:inline-block;
+justify-content: center;
+text-align: center;
+padding: 5px;
+color: white;
+box-shadow: #000000;
 
-.paginado {
-  
-    display: flex;
-    flex-direction: row; 
-    justify-content: center;
-    
-    
-  
 
 }
-
 .cards{
   display: grid;
-  /* align-items:center; */
-  /* padding: 30px; */
+ 
   justify-content: center;
-  grid-template-columns: 25% 25% 25% 25%;
-  gap: 20px;
-  
-  
-  
+  grid-template-columns: auto auto auto auto;
+  gap: 60px;
+}
+
+.paginado{
+display: flex;
+flex-direction: row; 
+justify-content: center;
+
+}
+
+.filterC{
+  display: flex;
+  flex-direction: row;
+  justify-content: center ;
+  justify-content: space-evenly ;
+
+}
+.refresh{
+
+
+font-family: italic;
+color: #ffffff;
+font-size: 14px;
+background: rgb(224, 157, 157);
+padding:  3px 13px 3px 13px ;
+text-decoration: none;
+
+}
+.input{
+background-color: #fbfbfb;
+}
+.create{
+
+font-family: italic;
+color: #ffffff;
+font-size: 14px;
+background: rgb(224, 157, 157);
+padding:  5px 13px 5px 13px ;
+text-decoration: none;
+}
+.search{
+display: flex;
+justify-content: start;
+margin-left: 50px;
+margin-bottom: 25px;
+margin-top: 10px;
+
+}
+.btnsearch {
+
+font-family: italic;
+color: #f6f6f6;
+font-size: 13px;
+background: rgb(224, 157, 157) ;
+padding:  3px 13px 3px 13px ;
+text-decoration: none;
+
+}
+
+.btnsearch:hover {
+background: #ee0606;
+text-decoration: none;
+cursor: pointer;
+}
+.create:hover {
+background: #fa0606;
+text-decoration: none;
+cursor: pointer;
+}
+.refresh:hover {
+background: #e40000;
+text-decoration: none;
+cursor: pointer;
 }

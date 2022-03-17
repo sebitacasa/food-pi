@@ -3,10 +3,11 @@ import styles from "./Card.module.css";
 
 
 export default function Card({ title, image, diets, healthScore, id}) {
-  console.log(id)
+  
+  let idRecipe = 3
 
   return (
-    <div className={styles.card}>
+    <div  className={styles.card}>
       <div  className={styles.cd}>
         <h3 className={styles.title}>{title}</h3>
         
@@ -16,22 +17,25 @@ export default function Card({ title, image, diets, healthScore, id}) {
             className={styles.cardimg}
             src={image}
             alt="img not found"
-            width="350px"
-            height="400px"
+            width="300px"
+            height="350px"
           />
         </div>
         <div className={styles.tipes}>
           {diets?.map((d) => (
-            <h3> {d.name}</h3>
-          ))}
+            <div key={idRecipe++}>
+              
+              <h3 > {d.name}</h3>
+            </div>
+            
+            ))}
         </div>
-
-        <h5>
-          <b>Health Score:</b> {healthScore}
-        </h5>
-
-        {/* <div className={styles.tipes}>  {diets.map(t => <h5> {t.name}</h5>)}  </div>  */}
+        
       </div>
     </div>
   );
 }
+        
+
+        
+

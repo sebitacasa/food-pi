@@ -37,7 +37,7 @@ export default function RecipeCreate() {
   const [errors, setErrors] = useState({});
 
   function handleDelete(e) {
-    e.preventDefault();
+   
     setInput({
       ...input,
       diets: input.diets.filter((t) => t !== e),
@@ -92,6 +92,7 @@ export default function RecipeCreate() {
       }
      
     }
+
 
   
 
@@ -172,24 +173,25 @@ export default function RecipeCreate() {
         <select className={styles.input} onChange={(e) => handleSelect(e)}>
           {diets.map((dl ) => (
               
-                  <option  value={dl.name}>{dl.name}</option>
+                  <option key={dl} value={dl.name}>{dl.name}</option>
               
             
           ))}
         </select>
 
         
-        <button className={styles.title} type="submit">Create Recipe</button>
-      </form>
+      <h1 className={styles.title}>Create Recepe</h1>
 
+        <button className={styles.title} type="submit">Create Recipe</button>
       {input.diets.map((d) => (
         <div >
           <p>{d}</p>
-          <button key={d} onClick={() => handleDelete(d)}>x</button>
+          {/* <button  onClick={() => handleDelete(d)}>x</button> */}
         </div>
       ))}
+      </form>
 
-      <h1 className={styles.title}>Create Recepe</h1>
+
     </div>
   );
 }
