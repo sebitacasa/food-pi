@@ -22,28 +22,16 @@ const getDiets = async (req,res) => {
             })
         })
 
-        // Diet.bulkCreate([
-        //     { name: "gluten free" },
-        //     { name: "ketogenic" },
-        //     { name: "vegetarian" },
-        //     { name: "lacto-vegetarian" },
-        //     { name: "lacto ovo vegetarian" },
-        //     { name: "vegan" },
-        //     { name: "pescatarian" },
-        //     { name: "paleolithic" },
-        //     { name: "primal" },
-        //     { name: "whole 30" },
-        //     { name: "dairy free"}
-        //   ]).then(() => console.log("200"))
-
-
-
+       
         const allTheTypes = await Diet.findAll();
         res.send(allTheTypes)
+
+
+
 }
 
 module.exports = 
 	{getDiets}
 
 
-//exportamos el arreglo de dietas que luego servirar para poder realizar la filtracion en la base de dato como en el pi
+

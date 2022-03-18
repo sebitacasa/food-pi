@@ -17,7 +17,7 @@ text-align: center;
 padding: 5px;
 color: white;
 box-shadow: #000000;
-font-size: 25px;
+font-size: 15px;
 font-weight: bolder;
 font-family: italic;
 
@@ -51,27 +51,27 @@ justify-content: center;
 
 font-family: italic;
 color: #ffffff;
-font-size: 14px;
+
 background: rgb(224, 157, 157);
 padding:  3px 13px 3px 13px ;
 text-decoration: none;
-font-size: 25px;
+font-size: 15px;
 font-weight: bolder;
 
 }
 .input{
 background-color: #fbfbfb;
-font-size: 25px;
+font-size: 15px;
 }
 .create{
 
 font-family: italic;
 color: #ffffff;
-font-size: 14px;
+
 background: rgb(224, 157, 157);
 padding:  5px 13px 5px 13px ;
 text-decoration: none;
-font-size: 25px;
+font-size: 15px;
 font-weight: bolder;
 
 }
@@ -81,6 +81,7 @@ justify-content: start;
 margin-left: 50px;
 margin-bottom: 25px;
 margin-top: 10px;
+
 
 
 
@@ -105,18 +106,20 @@ font-weight: bolder;
 }
 
 .btnsearch:hover {
-background: #ee0606;
+background: antiquewhite;
 text-decoration: none;
 cursor: pointer;
+color: #000000;
 }
 .create:hover {
-background: #fa0606;
+background: antiquewhite;
 text-decoration: none;
 cursor: pointer;
 color: #000000;
 }
 .refresh:hover {
-background: #e40000;
+background: antiquewhite;
 text-decoration: none;
 cursor: pointer;
+color: #000000;
 }

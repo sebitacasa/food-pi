@@ -36,7 +36,7 @@ export default function rootReducer(state = initialState, action){
                     details:action.payload
                 }
         case Action.ORDER_BY_SCORE:  
-             let sortRec = action.payload === 'max'? state.recipes.sort((a,b)=>{
+             let sortRec = action.payload === 'des'? state.recipes.sort((a,b)=>{
                  if(a.healthScore > b.healthScore){
                      return 1;
                  }
@@ -57,6 +57,25 @@ export default function rootReducer(state = initialState, action){
             return {
                 ...state,
                 recipes: sortRec 
+            }
+
+        case Action.ORDER_BY_ALPHABETIC:
+            let sortAlp = action.payload === 'asc' ? state.recipes.sort((a,b) => {
+                if (a.title > b.title) return 1
+                
+                if(b.title > a.title) return - 1
+
+                return 0
+            }) : 
+            state.recipes.sort((a,b) => {
+                if (a.title > b.title) return -1
+                if (b.title > a.title) return 1
+
+                return 0
+            })
+            return {
+                ...state,
+                recipes: sortAlp
             }
         
 
@@ -85,6 +104,9 @@ export default function rootReducer(state = initialState, action){
                 ...state,
                 details: []
             }
+
+       
+
 
              
             

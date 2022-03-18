@@ -10,24 +10,25 @@ export default function Detail (){
 
     const  {id} = useParams()
 
-    const dispatch = useDispatch()
+     const dispatch = useDispatch()
     // useEffect(()=>{
+    // dispatch( getById(id) ) }, [dispatch])    
+            
+        const recipeDetail = useSelector(state => state.details)
+        console.log(recipeDetail)
         
-    //     dispatch( getById(id) ) }, [dispatch])
-
     useEffect(()=>{
         dispatch(getById(id))
         return function () {
             dispatch(cleanDetail())
         }
+        
     }, [dispatch])
         
 
     
 
 
-    const recipeDetail = useSelector(state => state.details)
-    console.log(recipeDetail)
 
     
 
@@ -41,11 +42,11 @@ export default function Detail (){
                  <Link to='/home'><button className={styles.btn}>Back to main Page </button> </Link>
                  
                  <h1 className={styles.title}><strong> {recipeDetail[0].title} </strong></h1>
-                <div className={styles.img}>
-                     <img className={`${styles.colum} ${styles.movieImage}`} src={recipeDetail[0].image ? recipeDetail[0].image :'https://st.depositphotos.com/1036708/2191/i/600/depositphotos_21918797-stock-photo-knife-and-fork-with-plate.jpg'}/> 
-                </div>
+                
+                     <img className= {styles.image} src={recipeDetail[0].image ? recipeDetail[0].image :'https://st.depositphotos.com/1036708/2191/i/600/depositphotos_21918797-stock-photo-knife-and-fork-with-plate.jpg'}/> 
+                
                  
-                  <div className={`${styles.colum} ${styles.movieText} ${styles.firstItem}`} >
+                  <div className={styles.div} >
                  <h3 className={styles.type}>Type Diet: {recipeDetail[0].diets.map(t => t.name + ', ')}</h3>
                  
                  <h5 className={styles.summary} ><strong>summary:</strong> {recipeDetail[0].summary}</h5>

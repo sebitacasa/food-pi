@@ -1,12 +1,12 @@
 const axios = require('axios')
-const  API_KEY  =  "cf9c29166e834b0d980501527c03e978"
+const  API_KEY  =  "3df830a37d4a4206b4fd39039b55e6bf"
 //const {API_KEY} = process.env;
 
 
 
 
 const apiCall = async () => {
-  let recipe = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=15`);
+  let recipe = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=60`);
      
       let recipeInformation = recipe.data.results?.map((r) => {
         return {

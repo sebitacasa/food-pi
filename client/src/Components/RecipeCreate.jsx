@@ -13,7 +13,7 @@ function validate(input) {
     errors.summary = "Summary is require";
   } else if (!input.dishTypes) {
     errors.dishTypes = "A dish type is require";
-  } else if (!input.healthScore) {
+  } else if (input.healthScore > 100 || input.healthScore < 1) {
     errors.dishTypes = "Health score is require";
   } else if (!input.analyzedInstructions) {
     errors.dishTypes = "Steps are require";
@@ -21,6 +21,8 @@ function validate(input) {
 
   return errors;
 }
+
+let recipeId = 5
 
 export default function RecipeCreate() {
   const stateInitialForms = {
@@ -174,8 +176,10 @@ export default function RecipeCreate() {
 
         <select className={styles.dietss} onChange={(e) => handleSelect(e)}>
           {diets.map((dl ) => (
-              
-                  <option key={dl} value={dl.name}>{dl.name}</option>
+                
+
+                  <option key={recipeId++} value={dl.name}>{dl.name}</option>
+                
               
             
           ))}
@@ -188,7 +192,7 @@ export default function RecipeCreate() {
       {input.diets.map((d) => (
         <div className={styles.div} >
           <p className={styles.p}>{d}</p>
-           <button className={styles.btn} onClick={() => handleDelete(d)}>x</button> 
+           <button key={recipeId++} className={styles.btn} onClick={() => handleDelete(d)}>x</button> 
         </div>
       ))}
       </form>

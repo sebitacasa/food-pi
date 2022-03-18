@@ -18,7 +18,7 @@ const getAllRecipos = async (req, res) => {
     // let final = Promise.all(recipeDb.concat(recipesApi))
     // res.send(final)
 
-     return res.send(await Promise.all([ ...recipeDb, ...recipesApi ]));
+     return res.send(await Promise.all([ ...recipeDb, ...recipesApi  ]));
 
     
   } catch (error) {
@@ -69,7 +69,7 @@ const getById = async (req, res) => {
   if(dbinfo){
       try {
           let dbId = await Recipe.findByPk(id, {include: Diet})
-          res.json([dbId]) // si no hago esto, me lo pasa como objeto, y no me deja renderizar en el front, ya que el render lo hago con arreglo
+          res.json([dbId]) // si no hago esto, me lo pasa como objeto, y no me deja renderizar en el front, ya que el render lo hago desde un arreglo
       } catch (error) {
           console.log(error)
       }

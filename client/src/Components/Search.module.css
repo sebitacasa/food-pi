@@ -5,3 +5,15 @@
     margin-bottom: 25px;
     margin-top: 15px;
 }
+
+.btnsearch{
+  background: rgba(228, 141, 141, 0.89);;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.btnsearch:hover{
+    background-color:antiquewhite;
+    color: black;
+}

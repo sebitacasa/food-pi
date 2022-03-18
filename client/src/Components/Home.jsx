@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import * as Actions from "../Redux/Actions";
 import Card from "./Card";
 import Paginado from "./Pagina";
+import SearchBar from "./SearchBar";
 import styles from "./Home.module.css";
 
 export default function Home() {
@@ -12,14 +13,15 @@ export default function Home() {
   const allRecipes = useSelector((state) => state.recipes);
 
 
-  const [title, setTitle] = useState("");
-  const [search, setSearch] = useState("")
-  const [order, setOrder] = useState("");
+ 
+
+const [order, setOrder] = useState("");
+
   const [currentPage, setCurrentPage] = useState(1); // primero declaro un estado de la pagina en la posicion actual.
   const [recipesPerPage, setRecipesPerPage] = useState(9); // cantidad de recetas por pagina --- arranca en 9
   const indexLastRecipe = currentPage * recipesPerPage; // se setea el ultimo index de la pagina --- que es el resultado de la * entre la pagina actual y la cantidad de recetas por pagina
   const indexFirstRecipe = indexLastRecipe - recipesPerPage; // lo mismo solo que la resta del ultimo index con la cantidad de recetas por pag.
-  const currentRecipes = allRecipes.slice(indexFirstRecipe, indexLastRecipe); // aca realiza el slice que va a dividir la pagina osea 1 ---0--- 6
+  const currentRecipes = allRecipes.slice(indexFirstRecipe, indexLastRecipe); // aca realiza el slice que va a dividir la pagina osea 1 ---0--- 9
 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -39,17 +41,14 @@ export default function Home() {
     setOrder(e.target.value);
   }
 
-  function handleInputChange(e) {
+  function handleAlphabetic(e) {
     e.preventDefault();
-    setTitle(e.target.value);
-    setSearch("");
+    dispatch(Actions.orderByAlphabetic(e.target.value))
+    setCurrentPage(1)
+    setOrder(e.target.value)
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    dispatch(Actions.getByName(title));
-  }
-
+  
   useEffect(() => {
     dispatch(Actions.getAllRecipes());
   }, [dispatch]);
@@ -58,29 +57,30 @@ export default function Home() {
     e.preventDefault();
     dispatch(Actions.getAllRecipes()); // con el handler hacemos un refresh de todas las recetas
   }
-
+  
   function hadleFilterTypeDiet(e) {
     dispatch(Actions.orderByTypeDiet(e.target.value)); // filtra por tipo de dieta
   }
-
+ 
   
-
   return (
-      
-        
+    
+    
     <div className={styles.bkg}>
-    <div className={styles.search}>
-     <form onSubmit={(e) => {handleSubmit(e)}}> 
-     
-     <input type='text' placeholder='Search...'  onChange={(e) => {handleInputChange(e)}} className={styles.input}></input>
-     <button  type='submit' className={styles.btnsearch}>search</button>
-     </form>
+    
 
-     </div>
-     <div className={styles.filterC}>
+     <SearchBar/>
+
+    
+
+     
+
+      <div className={styles.filterC}>
         <Link to = '/recipes/post'> <button className={styles.create}>Create Recipe </button></Link>
 
         <button onClick = {e => handleOnClick(e)} className={styles.refresh}>Refresh Recipes</button>
+
+       
 
                 
                 <div className={styles.filt}>
@@ -88,11 +88,20 @@ export default function Home() {
                 
                 </div>
                 <div>
+
                 <select  onChange={e => handlePuntuation(e)} className={styles.select}>
-                    <option value="max ">max score</option>
-                    <option value="min">min score</option>
+                    <option value="asc ">Max score</option>
+                    <option value="des">Min score</option>
                 </select>
                 </div>
+
+                <div>
+                <select  onChange={e => handleAlphabetic(e)} className={styles.select}>
+                    <option value="asc">A-Z</option>
+                    <option value="des">Z-A</option>
+                </select>
+                </div>
+                
                 <div>
                 <select onChange={e => hadleFilterTypeDiet(e)} className={styles.select}>
                     <option value="All">All recipes</option>
@@ -108,9 +117,9 @@ export default function Home() {
                     <option value="whole 30">Whole 30</option>
                 </select>
                 </div>
-     </div>
+     </div>  
      
-     <div className={styles.paginado}> 
+      <div className={styles.paginado}> 
             <Paginado
             recipesPerPage = {recipesPerPage}
             allRecipes = {allRecipes.length}
@@ -124,11 +133,12 @@ export default function Home() {
                 return (
                     
                       <div key={e.id}>
-                    <Link to={'/recipes/' + e.id}>
+                    <Link to={`/recipes/${e.id}`}>
                     <Card title={e.title} 
                     image={e.image} 
                     diets={e.diets} 
-                    key={e.id}/>
+                    key={e.id}
+                    healthScore={e.healthScore}/>
                     </Link>
                     </div>
                     )  

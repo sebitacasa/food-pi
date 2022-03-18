@@ -7,6 +7,8 @@ export const GET_BY_ID = 'GET_BY-ID'
 export const GET_TYPE_DIET = 'GET_TYPE_DIET'
 export const CREATE_RECIPE = 'CREATE_RECIPE'
 export const CLEAN_DETAIL = 'CLEAN_DETAIL'
+export const ORDER_BY_ALPHABETIC = "ORDER_BY_ALPHABETIC"
+export const DELETE_RECIPE = 'DELETE_RECIPE'
 
 
 export function getAllRecipes(){
@@ -31,6 +33,13 @@ export function orderByTypeDiet(payload){
 export function orderByScore(payload){
     return {
         type: ORDER_BY_SCORE,
+        payload
+    }
+}
+
+export function orderByAlphabetic(payload){
+    return{
+        type: ORDER_BY_ALPHABETIC,
         payload
     }
 }
@@ -83,4 +92,5 @@ export function cleanDetail () {
        type: "CLEAN_DETAIL",
        
     } };
+
 
