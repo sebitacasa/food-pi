@@ -14,7 +14,7 @@ function validate(input) {
   } else if (!input.dishTypes) {
     errors.dishTypes = "A dish type is require";
   } else if (input.healthScore > 100 || input.healthScore < 1) {
-    errors.dishTypes = "Health score is require";
+    errors.healthScores = "Health score is require";
   } else if (!input.analyzedInstructions) {
     errors.dishTypes = "Steps are require";
   }
@@ -77,7 +77,7 @@ export default function RecipeCreate() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-     if(!Object.keys(errors).length){
+     if( !Object.keys(errors).length && input.name.length){
         dispatch(postRecipe(input));
         alert("Recipe Created");
         setInput({
@@ -90,7 +90,8 @@ export default function RecipeCreate() {
           summary: "",
         });
       }else{
-        alert('Error')
+       
+         alert('Error')
       }
      
     }

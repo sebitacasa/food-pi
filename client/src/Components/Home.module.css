@@ -123,3 +123,11 @@ text-decoration: none;
 cursor: pointer;
 color: #000000;
 }
+
+.error{
+  
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(10, 6, 0);
+}

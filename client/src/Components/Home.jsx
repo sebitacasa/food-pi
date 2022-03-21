@@ -90,8 +90,8 @@ const [order, setOrder] = useState("");
                 <div>
 
                 <select  onChange={e => handlePuntuation(e)} className={styles.select}>
-                    <option value="asc ">Max score</option>
-                    <option value="des">Min score</option>
+                    <option value="asc">Asc</option>
+                    <option value="des">Des</option>
                 </select>
                 </div>
 
@@ -129,7 +129,7 @@ const [order, setOrder] = useState("");
 
         <div className={styles.cards}>
             { 
-            currentRecipes?.map( (e) => {
+            currentRecipes.length > 0 ? currentRecipes.map( (e) => {
                 return (
                     
                       <div key={e.id}>
@@ -142,8 +142,8 @@ const [order, setOrder] = useState("");
                     </Link>
                     </div>
                     )  
-                })      
-            }    
+                }): <h5 className={styles.error}>404</h5>     
+            }   
             </div>
                    
     </div>

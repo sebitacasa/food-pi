@@ -1,5 +1,8 @@
 
 .lnd{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-image: url('../images/img.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -7,22 +10,23 @@
 }
 
 .title{
-    color: rgb(250, 250, 250);
+    color: rgb(221, 116, 17);
     text-shadow:
         0 0 7px #fff,
         0 0 10px #fff,
         0 0 21px #fff,
-        0 0 42px rgb(255, 0, 13),
-        0 0 82px rgb(255, 0, 64),
-        0 0 92px rgb(255, 0, 43),
-        0 0 102px rgb(255, 0, 64),
-        0 0 151px rgb(255, 0, 34);
+        0 0 42px rgb(240, 119, 6),
+        0 0 82px rgb(240, 119, 6),
+        0 0 92px rgb(240, 119, 6),
+        0 0 102px rgb(240, 119, 6),
+        0 0 151px rgb(240, 119, 6);
         text-decoration: none;
         align-items: center;
-        margin-left: 35%;
+        margin-left: 32%;
         margin-top: 250px;
         font-size: 60px;
- 
+        font-weight: bold;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif 
  
 }
 
@@ -32,17 +36,17 @@
    
   
     
-    border-radius: 20px;
+    border-radius: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
 
     color: #ffffff;
-    font-size: 35px;
+    font-size: 30px;
     padding: 9px 23px 9px 23px;
     text-decoration: none;
     position:relative;
     margin-top: 8%;
-    margin-left: 48%;
+    margin-left: 47%;
     
   }
   

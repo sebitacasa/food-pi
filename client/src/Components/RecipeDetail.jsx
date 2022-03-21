@@ -11,28 +11,17 @@ export default function Detail (){
     const  {id} = useParams()
 
      const dispatch = useDispatch()
-    // useEffect(()=>{
-    // dispatch( getById(id) ) }, [dispatch])    
-            
-        const recipeDetail = useSelector(state => state.details)
-        console.log(recipeDetail)
-        
-    useEffect(()=>{
-        dispatch(getById(id))
-        return function () {
-            dispatch(cleanDetail())
-        }
-        
-    }, [dispatch])
-        
-
-    
-
+     
+     const recipeDetail = useSelector(state => state.details)
+     console.log(recipeDetail)
+     
+     
+     useEffect(()=>{
+     dispatch( getById(id) ) }, [dispatch])    
 
 
     
-
-        return (
+ return (
             <div className={styles.detailsContainer}  >
              
            { 

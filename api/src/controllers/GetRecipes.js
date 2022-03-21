@@ -7,6 +7,7 @@ const { Sequelize } = require("sequelize");
 const getAllRecipos = async (req, res) => {
   try {
     let recipesApi =  await apiCall();
+    
     let recipeDb = await Recipe.findAll({
       include: {
         model: Diet,
@@ -69,7 +70,7 @@ const getById = async (req, res) => {
   if(dbinfo){
       try {
           let dbId = await Recipe.findByPk(id, {include: Diet})
-          res.json([dbId]) // si no hago esto, me lo pasa como objeto, y no me deja renderizar en el front, ya que el render lo hago desde un arreglo
+          res.json([dbId]) 
       } catch (error) {
           console.log(error)
       }
