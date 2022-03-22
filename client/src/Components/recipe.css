@@ -1,0 +1,82 @@
+.recipe {    
+    display: flex;
+    background-color: rgba(179, 118, 19, 0.822);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 3px 3px 5px 1px rgba(49, 34, 2, 0.596);
+    width: auto;
+    height: 550px;
+    padding: 30px;
+    
+    
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    
+}
+
+.recipe:hover{
+    cursor: pointer;
+    transform: scale(1.08);
+    transition: all 0.2s;
+}
+
+.recipeImg {    
+    display: flex;    
+    background-color: #ce5249;
+    box-shadow: 3px 3px 5px 1px rgb(112, 44, 44);
+    border-radius: 5px;
+    width: auto;
+    height: 180px; 
+}
+
+.recipeName {
+    display: flex;
+    color:rgb(248, 235, 211);
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-weight: 700;    
+    text-shadow: 6px 4px 5px rgba(0,0,0,0.43);   
+    font-size: 25px; 
+}
+
+
+
+.dietcointainer {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.diets {
+    display: flex;    
+   
+    align-content: flex-start;
+    align-self: center;
+    margin-top: 10px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-bottom: 10px;
+    padding-right: 5px;
+    padding-bottom: 1px;
+    border-radius: 3px;
+    
+    background-color: rgba(231, 218, 218, 0.15);
+    color: wheat;
+    font-size: 21px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.score{
+    align-self: center;
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: wheat;
+}

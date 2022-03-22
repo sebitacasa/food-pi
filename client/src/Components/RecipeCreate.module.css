@@ -40,8 +40,9 @@
    .form{
        display: flex;
        flex-direction: column;
-       background-color:rgb(212, 212, 158) ;
+       background-color:rgba(179, 118, 19, 0.822) ;
        border-radius: 20px;
+       width: 550px ;
        
       
        
@@ -85,7 +86,7 @@
 
 
  .input{
-    width:350px;
+    width:380px;
     height: 25px ;
     margin: auto;
     border: 2px solid rgb(255, 255, 255);
@@ -97,14 +98,23 @@
  .title{
     color: rgb(155, 76, 76);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
     text-shadow: #000000;
         text-decoration: none;
         align-items: center;
         font-size: 25px;
         margin-top: 25px;
         height: 50px;
+        width: 220px;
+        border-radius: 10px;
+        align-self: center;
         
         
+ }
+
+ .title:hover{
+   background:rgba(218, 119, 6, 0.24) ;
+   color: wheat;
  }
 
  .div{
@@ -123,35 +133,47 @@
  }
 
  .btn{
-   background: rgb(155, 76, 76);
+   background: rgb(248, 246, 246);
    margin-bottom: 15px;
-   color: white;
+   color: rgb(245, 140, 2);
    font-size: 27px;
    font-weight: bolder;
    
  }
 
  .summary{
-  width:350px;
+  width:340px;
   height: 100px ;
+  padding-bottom: 60px;
+  align-self: center;
   
   border: 2px solid rgb(255, 255, 255);
   outline: none;
   
   color: black;
+  margin-bottom: 10px;
  }
  
  .dietss{
    margin-top: 15px;
    height: 30px;
-   width: auto;
+   width: 180px;
    font-size: 15px;
+   align-self: center;
+   margin-bottom: 10px;
    
    
  }
 
  .label{
-   color: rgb(155, 76, 76);
+   color: wheat;
    font-size: 20px;
    font-weight: bolder;
+   font-family:Arial, Helvetica, sans-serif;
+   font-size: 20px;
+ }
+
+ .btn:hover{
+   background: rgba(212, 143, 16, 0.911);
+   color: #000000;
  }

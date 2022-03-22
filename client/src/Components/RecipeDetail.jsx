@@ -39,7 +39,7 @@ export default function Detail (){
                  <h3 className={styles.type}>Type Diet: {recipeDetail[0].diets.map(t => t.name + ', ')}</h3>
                  
                  <h5 className={styles.summary} ><strong>summary:</strong> {recipeDetail[0].summary}</h5>
-                 <h5 className={styles.healthScore}  ><strong>healthScore:</strong> {recipeDetail[0].healthScore}</h5>
+                 {/* <h5 className={styles.healthScore}  ><strong>healthScore:</strong> {recipeDetail[0].healthScore}</h5> */}
                  <h5  className={styles.summary}  ><strong>steps:</strong>{ Array.isArray(recipeDetail[0].analyzedInstructions) ? recipeDetail[0].analyzedInstructions.map(e => e.steps.map(f => f.step)) : recipeDetail[0].analyzedInstructions }</h5>
                  </div>
              </div> : 

@@ -7,6 +7,9 @@ import Card from "./Card";
 import Paginado from "./Pagina";
 import SearchBar from "./SearchBar";
 import styles from "./Home.module.css";
+import { CardGroup, Navbar, NavbarBrand } from "react-bootstrap";
+
+
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -66,10 +69,17 @@ const [order, setOrder] = useState("");
   return (
     
     
-    <div className={styles.bkg}>
     
-
-     <SearchBar/>
+    <div className={styles.bkg}>
+      <div className={styles.ddd}>
+        <Navbar bg="ligh" variant="ligh" sticky="top">
+          <Navbar.Brand>
+          
+          <div className={styles.divSea}>
+          <div className={styles.searchDiv}>
+          <SearchBar/>
+          </div>
+          
 
     
 
@@ -90,15 +100,15 @@ const [order, setOrder] = useState("");
                 <div>
 
                 <select  onChange={e => handlePuntuation(e)} className={styles.select}>
-                    <option value="asc">Asc</option>
-                    <option value="des">Des</option>
+                    <option value="asc">asc</option>
+                    <option value="des">des</option>
                 </select>
                 </div>
 
                 <div>
                 <select  onChange={e => handleAlphabetic(e)} className={styles.select}>
-                    <option value="asc">A-Z</option>
-                    <option value="des">Z-A</option>
+                    <option value="asc">a-z</option>
+                    <option value="des">a-z</option>
                 </select>
                 </div>
                 
@@ -117,7 +127,13 @@ const [order, setOrder] = useState("");
                     <option value="whole 30">Whole 30</option>
                 </select>
                 </div>
+                </div>
      </div>  
+     </Navbar.Brand>
+     </Navbar>
+     </div>
+
+     
      
       <div className={styles.paginado}> 
             <Paginado
@@ -133,6 +149,7 @@ const [order, setOrder] = useState("");
                 return (
                     
                       <div key={e.id}>
+                        
                     <Link to={`/recipes/${e.id}`}>
                     <Card title={e.title} 
                     image={e.image} 
@@ -145,6 +162,7 @@ const [order, setOrder] = useState("");
                 }): <h5 className={styles.error}>404</h5>     
             }   
             </div>
+            
                    
     </div>
 )

@@ -1,52 +1,40 @@
 import React from "react";
-import styles from "./Card.module.css";
+//import styles from "./Card.module.css";
+import './recipe.css';
 
 
 
-export default function Card({ title, image, diets, healthScore, summary}) {
+let idRecipe = 3
 
-  
-  let idRecipe = 3
-
-  return (
-    
-      <div  className={styles.card}>
-        <h3 className={styles.title}>{title}</h3>
-      
-        {/* <p>{analyzedInstructions[0].steps.map(d=><h5>{d.steps}</h5>)}</p>  */}
-        <div className={styles.imgaa}>
-          <img
-            className={` ${styles.image}`}
-            src={image}
-            alt="image not found"
-            width='200px'  height='250px'
-            
-            
-            
-          />
-          
-        </div>
-        <div className={`${styles.colum} ${styles.movieText} ${styles.firstItem}`}>
-          {diets?.map((d) => (
-            <div key={idRecipe++}>
-             
-              <h3 className={styles.diet}> {d.name}</h3>
+export default function Card (recipes) {
+    const { image, title, diets, healthScore} = recipes
+   
+    return (
+        <div className="recipe">
+            <div>
+                <h2 className="recipeName">{title}</h2>            
             </div>
             
+            <div>
+                <img className="recipeImg" src={image} alt="Not found"/>
+            </div>
             
-            ))}
-            <h5 className={styles.score}>HealthScore: {healthScore}</h5>
+
+            <div className="dietcointainer">
+            {diets?.map((d) => (
+            <div key={idRecipe++}>
+             
+              <h5 className="diets" > {d}</h5>
+            </div>  
+            ))}       
+            </div>
+
+            <div>
+              <h6 className="score">Health Score: {healthScore}</h6>
+            </div>
+            
         </div>
-        
-      </div>
-
-
-
-
-
-
-    
-  );
+    )
 }
         
 

@@ -6,6 +6,8 @@
     background-image: url('../images/img.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background: rgba(76, 175, 80, 0.3)
+    
     
 }
 
@@ -27,6 +29,7 @@
         font-size: 60px;
         font-weight: bold;
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif 
+       
  
 }
 
@@ -55,3 +58,5 @@
     background: rgb(163, 135, 12)
   }
  
+
+

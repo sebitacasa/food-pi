@@ -2,108 +2,105 @@
 
 
    .detailsContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    color: rgb(0, 0, 0);
+display: flex;
+flex-direction: column;
+    
     
 }
 
-.colum{
-    max-width: 100%;
-    margin: 10px;
-    height: auto;
-    height: 70%;
-    
-   
-    
-}
 
 .title{
     
-    background-color:#f7eac3 ;
+    background-color:rgba(179, 118, 19, 0.822) ;
     border-radius: 10px;
-    padding: 15px;
-    width: auto;
+    padding: 10px;
+    width: 60%;
+    margin-top: 10px;
     box-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.55);    
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(0, 0, 0);
+    color: wheat;
     font-weight: bold;
+    font-size: 32px;
+    margin-left: 21%;
+    
    
     
 }
 
 .type{
    
-    background-color:rgb(212, 212, 157) ;
+    background-color:rgba(179, 118, 19, 0.822) ;
     border-radius: 10px;
+    width: 35%;
+    margin-top: 15px;
     padding: 10px;
     box-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.55);    
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 25px;
+    align-self: center;
+    color: wheat;
   
     
 }
 
 .summary{
    
-    background-color:rgb(212, 212, 157) ;
+    background-color:rgba(179, 118, 19, 0.822) ;
     border-radius: 10px;
     padding: 10px;
+    width: 60%;
     box-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.55);    
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
+    align-self: center;
+    color: wheat;
   
     
 }
 
 .healthScore{
     display: inline;
-    background-color: rgb(212, 212, 157);
+    width: 10%;
+    background-color: rgba(179, 118, 19, 0.822);
     border-radius: 10px;
     padding: 7px;
     box-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.55);
     font-size: 20px;
-    
+    align-self: center;
+    color: wheat;
 }
 
 .img{
     
     
    
-    background-color: rgba(184, 100, 100, 0.89);
+    /* background-color: rgba(184, 100, 100, 0.89);
     box-shadow: 0px 0px 30px 2px #000;
     font-style: italic;
     padding: 10px;
     text-decoration: none;
-    text-align: center;
+    
     text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px, 2px 2px 2px rgba(206,89,55,0.42);
     color: #ffffff;
     font-style: oblique;
     margin: 2% 35% 1% 35%;
     padding-top: 60px;
     padding-bottom: 75px;
+    align-self: center;
     
-    border-radius: 25px;
+    border-radius: 25px; */
     
     
     
 }
 
-.img{
-    display: flex;
-    align-items: center;
-    width: auto;
-    height: auto;
-}
 
 .image{
+    
     border-radius: 10px;
     width: 500px;
     height: 400px;
-    margin-left: 190px;
+    margin-left: 36%;
     
     
 }
