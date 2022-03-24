@@ -1,9 +1,14 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import { postRecipe, getTypeDiet } from "../Redux/Actions";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./RecipeCreate.module.css";
+import imagen from "../images/pexels-rene-asmussen-2544829.jpg"
+import Footer from "./Footer";
+
+
+
+var images = {backgroundImage: `url(${imagen})`}
 
 function validate(input) {
   let errors = {};
@@ -25,6 +30,9 @@ function validate(input) {
 let recipeId = 5
 
 export default function RecipeCreate() {
+
+  
+
   const stateInitialForms = {
     title: "",
     dishTypes: "",
@@ -77,30 +85,40 @@ export default function RecipeCreate() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-     if( !Object.keys(errors).length && input.name.length){
-        dispatch(postRecipe(input));
-        alert("Recipe Created");
-        setInput({
-          title: "",
-          dishTypes: "",
-          image: "",
-          healthScore: "",
-          analyzedInstructions: "",
-          diets: [],
-          summary: "",
-        });
-      }else{
-       
-         alert('Error')
-      }
-     
-    }
+    if (Object.values(errors).length > 0) {
+      alert("Please complete the information required");
+  } else if (
+     input.title === '' && 
+     input.summary === '' && 
+     input.healthScore === '' &&
+     input.analyzedInstructions === '' &&
+     input.dishTypes === '' &&
+     !input.diets.length) {
+     alert("Please complete the form");}
+ else {
+     dispatch(postRecipe(input));
+     alert('New recipe added successfully!')
+     setInput({
+      title: "",
+      dishTypes: "",
+      image: "",
+      healthScore: "",
+      analyzedInstructions: "",
+      diets: [],
+      summary: "",
+     });
+    
+ }
+};
 
 
   
 
   return (
-    <div className={styles.container}>
+    <body style={images}>
+      
+
+<div className={styles.container}>
       <Link to="/home">
         <button className={styles.btn}>Back</button>
       </Link>
@@ -179,7 +197,7 @@ export default function RecipeCreate() {
           {diets.map((dl ) => (
                 
 
-                  <option key={recipeId++} value={dl.name}>{dl.name}</option>
+                  <option style={styles.dietTexts} key={recipeId++} value={dl.name}>{dl.name}</option>
                 
               
             
@@ -200,5 +218,12 @@ export default function RecipeCreate() {
 
 
     </div>
+    <div className={styles.footer}>
+    
+
+    <Footer/>
+    </div>
+    </body>
+    
   );
 }

@@ -1,8 +1,14 @@
+/* body{
+  height:100vh; 
+  margin:0;
+} */
+
 .bkg{
     background-image: url('../images/salad-gc7f87fae6_1920.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment:fixed;
+  
   
 
     
@@ -14,8 +20,10 @@
     justify-content:center;
    
     flex-direction: column;
+    height: 100vh;
+    width: auto;
 
-    top: 20px;
+    top: 5px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -40,8 +48,8 @@
    .form{
        display: flex;
        flex-direction: column;
-       background-color:rgba(179, 118, 19, 0.822) ;
-       border-radius: 20px;
+       background-color:rgba(85, 83, 81, 0.616) ;
+      
        width: 550px ;
        
       
@@ -57,7 +65,7 @@
     font-family: italic;
     color: #000000;
     
-    background: rgb(212, 212, 158);
+    background: rgb(190, 190, 172);
     padding: 7px 30px 7px 30px;
     text-decoration: none;
     padding-bottom: 10px;
@@ -96,17 +104,17 @@
  }
 
  .title{
-    color: rgb(155, 76, 76);
+    color: rgb(197, 83, 6);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
+    
     text-shadow: #000000;
         text-decoration: none;
         align-items: center;
         font-size: 25px;
         margin-top: 25px;
         height: 50px;
-        width: 220px;
-        border-radius: 10px;
+        width: 180px;
+        
         align-self: center;
         
         
@@ -133,9 +141,9 @@
  }
 
  .btn{
-   background: rgb(248, 246, 246);
+   background: rgba(185, 185, 185, 0.541);
    margin-bottom: 15px;
-   color: rgb(245, 140, 2);
+   color: rgb(255, 255, 255);
    font-size: 27px;
    font-weight: bolder;
    
@@ -157,18 +165,23 @@
  .dietss{
    margin-top: 15px;
    height: 30px;
-   width: 180px;
+   width: 210px;
    font-size: 15px;
    align-self: center;
    margin-bottom: 10px;
-   
+   padding-left: 45px;
+   color: rgb(238, 101, 10);
    
  }
 
+ 
+
+
+
  .label{
-   color: wheat;
+   color: rgba(243, 123, 10, 0.979);
    font-size: 20px;
-   font-weight: bolder;
+   align-self: center;
    font-family:Arial, Helvetica, sans-serif;
    font-size: 20px;
  }
@@ -177,3 +190,12 @@
    background: rgba(212, 143, 16, 0.911);
    color: #000000;
  }
+
+
+ .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+}

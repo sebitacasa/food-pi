@@ -1,82 +1,76 @@
-.recipe {    
+.container{
+    
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+}
+
+.card-container{
     display: flex;
-    background-color: rgba(179, 118, 19, 0.822);
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    box-shadow: 3px 3px 5px 1px rgba(49, 34, 2, 0.596);
-    width: auto;
-    height: 550px;
-    padding: 30px;
+    flex-direction: row;
+    align-items: flex-start;
+    align-self: flex-start;
+    padding-bottom: 495px;
+    padding-left: 40px;
+    margin-top: 25px;
+    margin-left: 5%;
+    width: 950px;
+    height: 100%;
+  
+}
+
+.card-img{
     
-    
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
+    width: 350px;
+    height: 550;
+}
+
+.title-text{
+ text-decoration: none;
+}
+
+.steps{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
 }
 
-.recipe:hover{
-    cursor: pointer;
-    transform: scale(1.08);
-    transition: all 0.2s;
+.steps-label{
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: rgba(255, 102, 0, 0.815);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-.recipeImg {    
-    display: flex;    
-    background-color: #ce5249;
-    box-shadow: 3px 3px 5px 1px rgb(112, 44, 44);
-    border-radius: 5px;
-    width: auto;
-    height: 180px; 
+.summary-label{
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: rgba(255, 102, 0, 0.815);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.label-diet{
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: rgba(255, 102, 0, 0.815);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-.recipeName {
-    display: flex;
-    color:rgb(248, 235, 211);
-    font-style: oblique;
+.diet{
+    font-size: 21px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+.card-text-summary{
+    font-size: 18px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bolder;
-    font-weight: 700;    
-    text-shadow: 6px 4px 5px rgba(0,0,0,0.43);   
-    font-size: 25px; 
+    
+
 }
 
-
-
-.dietcointainer {
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.diets {
-    display: flex;    
-   
-    align-content: flex-start;
-    align-self: center;
-    margin-top: 10px;
-    margin-left: 1px;
-    margin-right: 1px;
-    margin-bottom: 10px;
-    padding-right: 5px;
-    padding-bottom: 1px;
-    border-radius: 3px;
-    
-    background-color: rgba(231, 218, 218, 0.15);
-    color: wheat;
-    font-size: 21px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    
-}
-
-.score{
-    align-self: center;
-    margin-top: 10px;
-    font-size: 17px;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: wheat;
+.title{
+    font-size: 28px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:rgba(255, 102, 0, 0.815);
+    padding-bottom: 10px;
 }

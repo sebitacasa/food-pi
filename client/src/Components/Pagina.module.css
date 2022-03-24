@@ -1,27 +1,20 @@
-.cards{
-    display: grid;
-    grid-template-columns:repeat(auto-fill, 230px);
-    gap: 40px;
-    padding: 40px;
-    justify-content: center;
-    
 
-
-
-}
 
 .paginado{
-    background: rgb(255, 255, 255);
-    color: #f37703;
+    background: hsla(0, 0%, 87%, 0.938);
+    color: #050505;
     font-size: 20px;
     cursor: pointer;
     margin-top: 5px;
-    border-radius: 7px;
+    position:absolute;
+    margin-bottom: 15px;
+    
+   
     
     
     
 }
 
 .paginado:hover{
-    background-color:antiquewhite
+    background-color:rgba(245, 123, 9, 0.418)
 }

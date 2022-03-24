@@ -98,6 +98,12 @@ export default function rootReducer(state = initialState, action){
             return{
                 ...state
             }  
+
+        case Action.CLEAN_DETAIL:
+            return{
+                ...state,
+                details: []
+            }
             
        
        

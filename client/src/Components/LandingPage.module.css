@@ -1,18 +1,38 @@
 
+
+body{
+  background: rgb(0, 0, 0);
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  height: 100vh;
+
+  
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+ 
+
+}
+
+
+
+
+
 .lnd{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-image: url('../images/img.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background: rgba(76, 175, 80, 0.3)
-    
+
+  position: relative;
+  width:100% ;
+  height: 100%;
+ 
     
 }
 
+
+
 .title{
-    color: rgb(221, 116, 17);
+   
+    color: rgb(75, 74, 74);
     text-shadow:
         0 0 7px #fff,
         0 0 10px #fff,
@@ -28,29 +48,31 @@
         margin-top: 250px;
         font-size: 60px;
         font-weight: bold;
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif 
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        position: absolute;
        
  
 }
 
 .btn {
     cursor: pointer;
-    background: #d84040;
+    
+   
    
   
-    
-    border-radius: 10px;
+    background: rgba(110, 110, 110, 0.26);
+    border-radius: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
 
-    color: #ffffff;
+    color: rgba(245, 119, 2, 0.911);
     font-size: 30px;
     padding: 9px 23px 9px 23px;
     text-decoration: none;
-    position:relative;
+    position:absolute;
     margin-top: 8%;
     margin-left: 47%;
-    
+    margin-top: 28%;    
   }
   
   .btn:hover {

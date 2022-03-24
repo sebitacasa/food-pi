@@ -3,11 +3,18 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import * as Actions from "../Redux/Actions";
-import Card from "./Card";
+
 import Paginado from "./Pagina";
 import SearchBar from "./SearchBar";
 import styles from "./Home.module.css";
 import { CardGroup, Navbar, NavbarBrand } from "react-bootstrap";
+import Individual from "./Card";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Button, Alert, NavDropdown , Nav, FormControl, Form, Container, Select} from "react-bootstrap";
+import {LinkContainer} from 'react-router-bootstrap'
+import imagen from '../images/pexels-rene-asmussen-2544829.jpg'
+import Footer from "./Footer";
+
 
 
 
@@ -18,10 +25,11 @@ export default function Home() {
 
  
 
-const [order, setOrder] = useState("");
+  const [order, setOrder] = useState("");
 
+ 
   const [currentPage, setCurrentPage] = useState(1); // primero declaro un estado de la pagina en la posicion actual.
-  const [recipesPerPage, setRecipesPerPage] = useState(9); // cantidad de recetas por pagina --- arranca en 9
+  const [recipesPerPage, setRecipesPerPage] = useState(8); // cantidad de recetas por pagina --- arranca en 9
   const indexLastRecipe = currentPage * recipesPerPage; // se setea el ultimo index de la pagina --- que es el resultado de la * entre la pagina actual y la cantidad de recetas por pagina
   const indexFirstRecipe = indexLastRecipe - recipesPerPage; // lo mismo solo que la resta del ultimo index con la cantidad de recetas por pag.
   const currentRecipes = allRecipes.slice(indexFirstRecipe, indexLastRecipe); // aca realiza el slice que va a dividir la pagina osea 1 ---0--- 9
@@ -53,7 +61,9 @@ const [order, setOrder] = useState("");
 
   
   useEffect(() => {
+   
     dispatch(Actions.getAllRecipes());
+    
   }, [dispatch]);
 
   function handleOnClick(e) {
@@ -65,55 +75,36 @@ const [order, setOrder] = useState("");
     dispatch(Actions.orderByTypeDiet(e.target.value)); // filtra por tipo de dieta
   }
  
+  var images = {backgroundImage: `url(${imagen})`}
+ 
   
   return (
     
     
     
-    <div className={styles.bkg}>
-      <div className={styles.ddd}>
-        <Navbar bg="ligh" variant="ligh" sticky="top">
-          <Navbar.Brand>
-          
-          <div className={styles.divSea}>
-          <div className={styles.searchDiv}>
-          <SearchBar/>
-          </div>
-          
-
-    
-
-     
-
-      <div className={styles.filterC}>
-        <Link to = '/recipes/post'> <button className={styles.create}>Create Recipe </button></Link>
-
-        <button onClick = {e => handleOnClick(e)} className={styles.refresh}>Refresh Recipes</button>
-
-       
-
-                
-                <div className={styles.filt}>
-               
-                
-                </div>
-                <div>
-
-                <select  onChange={e => handlePuntuation(e)} className={styles.select}>
-                    <option value="asc">asc</option>
-                    <option value="des">des</option>
-                </select>
-                </div>
-
-                <div>
-                <select  onChange={e => handleAlphabetic(e)} className={styles.select}>
-                    <option value="asc">a-z</option>
-                    <option value="des">a-z</option>
-                </select>
-                </div>
-                
-                <div>
-                <select onChange={e => hadleFilterTypeDiet(e)} className={styles.select}>
+    <body  style={images}  >
+      
+  
+      <Navbar  bg="dark" variant="light" expand="lg">
+  <Container fluid>
+    <Navbar.Brand style={{color:"orange"}} href="#">Henry Food</Navbar.Brand>
+    <Navbar.Toggle aria-controls="navbarScroll" />
+    <Navbar.Collapse id="navbarScroll">
+      <Nav
+        className="me-auto my-2 my-lg-0"
+        style={{ maxHeight: '100px' }}
+        navbarScroll
+      >
+        
+        <LinkContainer style={{color:"rgb(235, 125, 0)"}} to ='/'><Nav.Link>Home</Nav.Link></LinkContainer>
+        
+        <LinkContainer style={{color:"rgb(235, 125, 0)"}}  to ="/recipes/post" >
+          <Nav.Link  >
+          Create Recipe
+        </Nav.Link>
+        </LinkContainer>
+        
+        <Form.Select onChange={e => hadleFilterTypeDiet(e)} style={{width: 150, height: 37, marginBottom: 3, paddingBottom: 1, paddingTop: 2, marginLeft: 815}} aria-label="Default select example">
                     <option value="All">All recipes</option>
                     <option value="gluten free">Gluten Free</option>
                     <option value="ketogenic">Ketogenic</option>
@@ -125,15 +116,28 @@ const [order, setOrder] = useState("");
                     <option value="paleolithic">Paleolithic</option>
                     <option value="primal">Primal</option>
                     <option value="whole 30">Whole 30</option>
-                </select>
-                </div>
-                </div>
-     </div>  
-     </Navbar.Brand>
-     </Navbar>
-     </div>
+          
+          </Form.Select>
+          <Form.Select  onChange={e => handleAlphabetic(e)} style={{width: 75, marginLeft: 5, marginBottom: 1, height: 37, paddingBottom: 1, paddingTop: 2 }} aria-label="Default select example">
+                    <option value="asc">asc</option>
+                    <option value="des">des</option>
+          </Form.Select>
 
-     
+          <Form.Select  onChange={e => handlePuntuation(e)} style={{width: 73, marginLeft: 5,  height: 37, marginBottom: 1, paddingBottom: 1, paddingTop: 2 }} aria-label="Default select example" >
+                    <option value="asc">a-z</option>
+                    <option value="des">a-z</option>
+          </Form.Select>
+        
+      </Nav>
+      <Form  className="d-flex">
+      <SearchBar/>
+      </Form>
+    </Navbar.Collapse>
+  </Container>
+  
+</Navbar>
+
+
      
       <div className={styles.paginado}> 
             <Paginado
@@ -151,20 +155,25 @@ const [order, setOrder] = useState("");
                       <div key={e.id}>
                         
                     <Link to={`/recipes/${e.id}`}>
-                    <Card title={e.title} 
+                    <Individual title={e.title} 
                     image={e.image} 
                     diets={e.diets} 
                     key={e.id}
-                    healthScore={e.healthScore}/>
+                    healthScore={e.healthScore}
+                    sourceName={e.sourceName}
+                    dishTypes={e.dishTypes}/>
                     </Link>
                     </div>
                     )  
-                }): <h5 className={styles.error}>404</h5>     
+                }): <Alert className={{fontsize: 150}}>404</Alert>     
             }   
             </div>
-            
+            <div className={styles.footer}>
+
+            <Footer/>
+            </div>
                    
-    </div>
+    </body>
 )
 }
                 
@@ -174,3 +183,5 @@ const [order, setOrder] = useState("");
            
               
             
+
+

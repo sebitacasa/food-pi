@@ -8,6 +8,7 @@ export const GET_TYPE_DIET = 'GET_TYPE_DIET'
 export const CREATE_RECIPE = 'CREATE_RECIPE'
 export const ORDER_BY_ALPHABETIC = "ORDER_BY_ALPHABETIC"
 export const DELETE_RECIPE = 'DELETE_RECIPE'
+export const CLEAN_DETAIL = "CLEAN_DETAIL"
 
 
 export function getAllRecipes(){
@@ -83,6 +84,12 @@ export function postRecipe (payload){
         }
     } 
    
+}
+
+export function detailClean (){
+    return{
+        type:CLEAN_DETAIL
+    }
 }
 
 
