@@ -7,7 +7,7 @@ var imagen = {backgroundImage: `url(${images})`}
 
 export default function LandingPage() {
   return (
-    <body style={imagen}>
+    <body className={styles.bodyLanging} style={imagen}>
      
         <div className={styles.ldn}>
           <h1 className={styles.title}>Welcome to the kitchen</h1>

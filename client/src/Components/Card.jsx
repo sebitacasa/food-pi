@@ -13,9 +13,9 @@ export default function Individual (recipes) {
    
     return (
         <div className={styles.container}>
-            <Card style={{color: '#000', marginBottom: 10, background:"rgba(225, 225, 225, 0.29)",}}>
+            <Card style={{color: '#000', marginBottom: 65, background:"rgba(225, 225, 225, 0.29)"}}>
           <Card.Img src={image}/>
-          <Card.Body  style={{width: 350, height: 335 }}>
+          <Card.Body  style={{width: 360, height: 440, borderStyle: "none"}}>
               <Card.Title className="title-text" >
                 <a className={styles.text}>{title}</a>
                   
@@ -23,18 +23,19 @@ export default function Individual (recipes) {
               <Card.Text style={{marginLeft: 87, marginBottom: "auto", }} >
               <h6 className={styles.score}>Health Score: {healthScore}</h6> 
               </Card.Text>
-                 <label className={styles.label} >Dish Type:</label>
-               <Card.Text>
-              {dishTypes?.map((d) => (
+                 <label className={styles.label} >Type of diet:</label>
+                 
+               <Card.Text style={{ width: "auto", height: "auto",   }}>
+              {diets?.map((d) => (
             <div  key={idRecipe++}>
-             
-              <h5 className={styles.dish}> {d}</h5>
+              
+              <h5 className={styles.dish}> {d.name }</h5>
             </div>  
             ))}             
-              </Card.Text> 
-
+              </Card.Text > 
+             
               
-               <Card.Text ><h3 className={styles.author}>Author: {sourceName}</h3></Card.Text> 
+               <Card.Text style={{ width: "auto", height: 50  }}  ><h3 className={styles.author}>Author: {sourceName}</h3></Card.Text> 
 
           </Card.Body>
           <Card></Card>

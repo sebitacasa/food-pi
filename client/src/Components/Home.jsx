@@ -14,6 +14,7 @@ import { Button, Alert, NavDropdown , Nav, FormControl, Form, Container, Select}
 import {LinkContainer} from 'react-router-bootstrap'
 import imagen from '../images/pexels-rene-asmussen-2544829.jpg'
 import Footer from "./Footer";
+import { Spinner } from "react-bootstrap";
 
 
 
@@ -29,7 +30,7 @@ export default function Home() {
 
  
   const [currentPage, setCurrentPage] = useState(1); // primero declaro un estado de la pagina en la posicion actual.
-  const [recipesPerPage, setRecipesPerPage] = useState(8); // cantidad de recetas por pagina --- arranca en 9
+  const [recipesPerPage, setRecipesPerPage] = useState(9); // cantidad de recetas por pagina --- arranca en 9
   const indexLastRecipe = currentPage * recipesPerPage; // se setea el ultimo index de la pagina --- que es el resultado de la * entre la pagina actual y la cantidad de recetas por pagina
   const indexFirstRecipe = indexLastRecipe - recipesPerPage; // lo mismo solo que la resta del ultimo index con la cantidad de recetas por pag.
   const currentRecipes = allRecipes.slice(indexFirstRecipe, indexLastRecipe); // aca realiza el slice que va a dividir la pagina osea 1 ---0--- 9
@@ -82,12 +83,13 @@ export default function Home() {
     
     
     
-    <body  style={images}  >
+    <body className={styles.bodyHome} style={images}  >
       
-  
+    <div className={styles.boxContainer}>
+      <div className={styles.container}>
       <Navbar  bg="dark" variant="light" expand="lg">
   <Container fluid>
-    <Navbar.Brand style={{color:"orange"}} href="#">Henry Food</Navbar.Brand>
+    <Navbar.Brand style={{color:"orange"}} >Henry Food</Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav
@@ -97,14 +99,15 @@ export default function Home() {
       >
         
         <LinkContainer style={{color:"rgb(235, 125, 0)"}} to ='/'><Nav.Link>Home</Nav.Link></LinkContainer>
+        <Nav.Link style={{color:"rgb(235, 125, 0)"}} >Refresh Page</Nav.Link>
         
-        <LinkContainer style={{color:"rgb(235, 125, 0)"}}  to ="/recipes/post" >
+        <LinkContainer style={{color:"rgb(235, 125, 0)",}}  to ="/recipes/post" >
           <Nav.Link  >
           Create Recipe
         </Nav.Link>
         </LinkContainer>
-        
-        <Form.Select onChange={e => hadleFilterTypeDiet(e)} style={{width: 150, height: 37, marginBottom: 3, paddingBottom: 1, paddingTop: 2, marginLeft: 815}} aria-label="Default select example">
+        <Form  className="d-flex">
+        <Form.Select onChange={e => hadleFilterTypeDiet(e)} style={{width: 150, height: 37, marginBottom: 3, paddingBottom: 1, paddingTop: 2}} aria-label="Default select example">
                     <option value="All">All recipes</option>
                     <option value="gluten free">Gluten Free</option>
                     <option value="ketogenic">Ketogenic</option>
@@ -113,21 +116,24 @@ export default function Home() {
                     <option value="lacto ovo vegetarian">Ovo-Vegetarian</option>
                     <option value="vegan">Vegan</option>
                     <option value="pescatarian">Pescatarian</option>
-                    <option value="paleolithic">Paleolithic</option>
+                    <option value="paleolithic">Paleolithic</option> 
                     <option value="primal">Primal</option>
                     <option value="whole 30">Whole 30</option>
-          
           </Form.Select>
-          <Form.Select  onChange={e => handleAlphabetic(e)} style={{width: 75, marginLeft: 5, marginBottom: 1, height: 37, paddingBottom: 1, paddingTop: 2 }} aria-label="Default select example">
+          
+          
+          
+          <Form.Select  onChange={e => handlePuntuation(e)} style={{width: 75, marginLeft: 5, marginBottom: 1, height: 37, paddingBottom: 1, paddingTop: 2 }} aria-label="Default select example">
                     <option value="asc">asc</option>
                     <option value="des">des</option>
           </Form.Select>
-
-          <Form.Select  onChange={e => handlePuntuation(e)} style={{width: 73, marginLeft: 5,  height: 37, marginBottom: 1, paddingBottom: 1, paddingTop: 2 }} aria-label="Default select example" >
+          
+          <Form.Select  onChange={e => handleAlphabetic(e)} style={{width: 73, marginLeft: 5,  height: 37, marginBottom: 1, paddingBottom: 1, paddingTop: 2 }} aria-label="Default select example" >
                     <option value="asc">a-z</option>
-                    <option value="des">a-z</option>
+                    <option value="des">z-a</option>
           </Form.Select>
-        
+         
+          </Form>
       </Nav>
       <Form  className="d-flex">
       <SearchBar/>
@@ -148,8 +154,22 @@ export default function Home() {
             </div>     
 
         <div className={styles.cards}>
-            { 
-            currentRecipes.length > 0 ? currentRecipes.map( (e) => {
+            { currentRecipes.length > 0 ? currentRecipes.map( (e) => {
+              <div className="spinner">
+              <Spinner
+                style={{
+                  color: "rgb(253, 253, 253)",
+                  marginLeft: 850,
+                  marginTop: 150,
+                  fontSize: 250,
+                }}
+                animation="border"
+                role="status"
+              >
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+              </div>
+
                 return (
                     
                       <div key={e.id}>
@@ -161,18 +181,25 @@ export default function Home() {
                     key={e.id}
                     healthScore={e.healthScore}
                     sourceName={e.sourceName}
-                    dishTypes={e.dishTypes}/>
+                    />
                     </Link>
                     </div>
                     )  
-                }): <Alert className={{fontsize: 150}}>404</Alert>     
-            }   
+                }) :   <div className={styles.alert}>
+                <Alert className={styles.alertText}><h3 className={styles.text404}>404<br/> <br/> No recipe found !!</h3></Alert>     
+              </div>
+             
+            } 
             </div>
+            
+            
             <div className={styles.footer}>
 
-            <Footer/>
+            <Footer/> 
             </div>
-                   
+            </div>
+              </div>
+                    
     </body>
 )
 }
@@ -180,7 +207,7 @@ export default function Home() {
                     
            
           
-           
+             
               
             
 

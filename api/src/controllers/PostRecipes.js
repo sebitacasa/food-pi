@@ -10,10 +10,10 @@ const postFood = async (req, res) => {
       title,
       summary,
       healthScore,
-      analyzedInstructions,
+      steps,
       diets,
       image,
-      cuisines
+      sourceName,
      
     } = req.body;
 
@@ -22,9 +22,10 @@ const postFood = async (req, res) => {
         title,
         summary,
         healthScore,
-        analyzedInstructions,
+        steps,
         image,
-        cuisines
+        sourceName
+       
         
       };
     

@@ -30,7 +30,7 @@ export default function Detail() {
   }, [dispatch]);
 
   return (
-    <body style={imagen}>
+    <body className={styles.bodyDetail} style={imagen}>
       <div className={styles.detailsContainer}>
         {recipeDetail.length > 0 ? (
           <div className={styles.container}>
@@ -43,9 +43,13 @@ export default function Detail() {
                 color: "#000",
                 marginBottom: 50,
                 background: "rgba(243, 243, 243, 0.42)",
+                margin: "auto",
+                height: "auto",
+                width: 1000,
+                
               }}
             >
-              <Card.Img style={{width: 330, height: "auto", marginRight: 30, marginTop: 5}}
+              <Card.Img style={{width: 330, height: "auto", marginRight: 30, marginTop: 25}}
                 className="card-img"
                 
                 src={
@@ -54,7 +58,7 @@ export default function Detail() {
                     : "https://st.depositphotos.com/1036708/2191/i/600/depositphotos_21918797-stock-photo-knife-and-fork-with-plate.jpg"
                 }
               />
-              <Card.Body style={{ width: 220, height: 700 }}>
+              <Card.Body style={{ width: 220, height: "auto"}}>
                 <Card.Title style={{ textDecoration: "none" }}>
                   <h3 className="title">{recipeDetail[0].title}</h3>
                 </Card.Title>
@@ -76,7 +80,7 @@ export default function Detail() {
                       ? recipeDetail[0].analyzedInstructions.map((e) =>
                           e.steps.map((f) => f.step)
                         )
-                      : recipeDetail[0].analyzedInstructions}
+                      : recipeDetail[0].steps}
                   </h5>
                 </Card.Text>
               </Card.Body>
@@ -84,11 +88,12 @@ export default function Detail() {
             </Card>
           </div>
         ) : (
+          <div className="spinner">
           <Spinner
             style={{
               color: "rgb(253, 253, 253)",
               marginLeft: 850,
-              marginTop: "auto",
+              marginTop: 150,
               fontSize: 250,
             }}
             animation="border"
@@ -96,6 +101,7 @@ export default function Detail() {
           >
             <span className="visually-hidden">Loading...</span>
           </Spinner>
+          </div>
         )}
       </div>
       <div className={styles.footer}>

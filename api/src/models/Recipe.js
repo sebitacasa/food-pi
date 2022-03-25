@@ -20,6 +20,8 @@ module.exports = (sequelize) => {
       allowNull: false
 
     },
+
+    
   
    
     healthScore: {
@@ -30,9 +32,14 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING ,
       
     },
-    analyzedInstructions: {
+    steps: {
       type: DataTypes.TEXT,
+      allowNull: false
       
+    },
+
+    sourceName: {
+      type: DataTypes.TEXT,
     },
     createdInDb:{                                  
       type : DataTypes.BOOLEAN,            

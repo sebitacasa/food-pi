@@ -1,26 +1,40 @@
-/* body{
-  height:100vh; 
-  margin:0;
-} */
 
-.bkg{
-    background-image: url('../images/salad-gc7f87fae6_1920.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-  
-  
+
+ .bodyCreate{
 
     
+  background-image: url('../images/pexels-rene-asmussen-2544829.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  overflow-x: hidden;
+  text-decoration: none;
+
     
 }
+  
+  .bodyCreate:before {
+    content:'';
+    position: absolute;
+          top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    
+  }  
+  
+
+
+
 
 .container {
+    overflow: hidden;
     display: flex;
     justify-content:center;
-   
+    position: relative;
     flex-direction: column;
-    height: 100vh;
+    height:100vh;
     width: auto;
 
     top: 5px;
@@ -28,7 +42,7 @@
     right: 0;
     left: 0;
     
-    position:fixed;
+    
     display: flex;
     flex-direction: column;
     justify-content:center;
@@ -65,7 +79,7 @@
     font-family: italic;
     color: #000000;
     
-    background: rgb(190, 190, 172);
+    background: rgba(190, 190, 172, 0.835);
     padding: 7px 30px 7px 30px;
     text-decoration: none;
     padding-bottom: 10px;
@@ -103,15 +117,18 @@
     color: black;
  }
 
- .title{
-    color: rgb(197, 83, 6);
+ .btnCreate{
+    color: rgb(236, 98, 6);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: #0a04047c;
     
-    text-shadow: #000000;
+    text-shadow: #000000ea;
         text-decoration: none;
         align-items: center;
         font-size: 25px;
         margin-top: 25px;
+        border-style:none;
+        border-radius: 5px;
         height: 50px;
         width: 180px;
         
@@ -120,9 +137,9 @@
         
  }
 
- .title:hover{
-   background:rgba(218, 119, 6, 0.24) ;
-   color: wheat;
+ .btnCreate:hover{
+   background:rgba(223, 110, 4, 0.705) ;
+   color: rgb(0, 0, 0);
  }
 
  .div{
@@ -141,9 +158,9 @@
  }
 
  .btn{
-   background: rgba(185, 185, 185, 0.541);
+   background: rgba(10, 9, 9, 0.575);
    margin-bottom: 15px;
-   color: rgb(255, 255, 255);
+   color: rgb(255, 166, 0);
    font-size: 27px;
    font-weight: bolder;
    
@@ -170,7 +187,7 @@
    align-self: center;
    margin-bottom: 10px;
    padding-left: 45px;
-   color: rgb(238, 101, 10);
+   color: rgb(0, 0, 0);
    
  }
 
@@ -179,7 +196,7 @@
 
 
  .label{
-   color: rgba(243, 123, 10, 0.979);
+   color: rgba(255, 255, 255, 0.979);
    font-size: 20px;
    align-self: center;
    font-family:Arial, Helvetica, sans-serif;
@@ -187,7 +204,7 @@
  }
 
  .btn:hover{
-   background: rgba(212, 143, 16, 0.911);
+   background: rgba(255, 158, 1, 0.383);
    color: #000000;
  }
 
