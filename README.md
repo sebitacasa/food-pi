@@ -7,9 +7,7 @@
 
 
 
-<p align="right">
-  <img height="200" src="./cooking.png" />
-</p>
+![image](https://user-images.githubusercontent.com/89590493/162551899-5b4cee01-7681-42ed-8d8e-aea35fa7df27.png)
 
 ## Objetivos del Proyecto
 
