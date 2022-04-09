@@ -4,6 +4,9 @@
 
 # Individual Project - Henry Food
 
+![image](https://user-images.githubusercontent.com/89590493/162551702-bde7d034-a4b9-4d8a-a5ed-b54696e81475.png)
+
+
 <p align="right">
   <img height="200" src="./cooking.png" />
 </p>
@@ -173,5 +176,6 @@ __IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y pagin
 - [ ] Al menos tener un componente del frontend con sus tests respectivos
 - [ ] Al menos tener una ruta del backend con sus tests respectivos
 - [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
-#   f o o d - p i  
- 
+#� �f�o�o�d�-�p�i�
+�
+�
