@@ -4,7 +4,7 @@
 
 # Individual Project - Henry Food
 
-![image](https://user-images.githubusercontent.com/89590493/162551702-bde7d034-a4b9-4d8a-a5ed-b54696e81475.png)
+
 
 
 <p align="right">
@@ -111,6 +111,13 @@ __Ruta principal__: debe contener
 - [ ] Paginado para ir buscando y mostrando las siguientes recetas, 9 recetas por pagina, mostrando las primeros 9 en la primer pagina.
 
 __IMPORTANTE__: Dentro de la Ruta Principal se deben mostrar tanto las recetas traidas desde la API como así también las de la base de datos. Debido a que en la API existen alrededor de 5 mil recetas, por cuestiones de performance pueden tomar la simplificación de obtener y paginar las primeras 100.
+
+![image](https://user-images.githubusercontent.com/89590493/162551735-a4d96cf7-647e-4ea1-93e4-e0d61ea8e773.png)
+
+![image](https://user-images.githubusercontent.com/89590493/162551859-c002a7ce-9120-4790-857d-da2bfcc8a3fc.png)
+
+![image](https://user-images.githubusercontent.com/89590493/162551832-6414cb64-92bf-4826-9549-0a7fb8871992.png)
+
 
 __Ruta de detalle de receta__: debe contener
 - [ ] Los campos mostrados en la ruta principal para cada receta (imagen, nombre, tipo de plato y tipo de dieta)
